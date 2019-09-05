@@ -90,3 +90,8 @@
         transform:translateY(0px);
     }
 }
+@include respond(tabland){
+.btn-popup{
+margin-bottom: 1.5rem !important;
+}
+}

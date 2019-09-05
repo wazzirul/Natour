@@ -16,6 +16,15 @@
         cursor: pointer;
         z-index:2000;
         box-shadow:0 1rem 3rem rgba($cblack, .1);
+
+        @include respond(tabport){
+            top:4rem;
+            right:4rem;
+        }
+        @include respond(phone){
+            top:3rem;
+            right:3rem;
+        }
     }
     
     &__background{
@@ -29,7 +38,15 @@
         z-index:1000;
         background-image: radial-gradient($cliggreen,$cdargreen);
 
-        //transform: scale(80);
+        @include respond(tabport){
+            top:4.5rem;
+            right:4.5rem;
+        }
+    
+        @include respond(phone){
+            top:3.5rem;
+            right:3.5rem;
+        }
     }
 
     &__nav{

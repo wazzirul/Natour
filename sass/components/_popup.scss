@@ -10,6 +10,12 @@
     visibility: hidden;
     transition: all .3s;
 
+    @supports(backdrop-filter: blur(10px)){
+        background-color: rgba($cblack, .3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
     &__content{
         @include absCenter;
         width:75%;
@@ -68,6 +74,35 @@
         transform: translate(-50%,-50%) scale(1);
         -webkit-transform: translate(-50%,-50%) scale(1);
     }
+
+    @include respond(tabland){
+        text-align: center;
+        &__left{
+            width:100%;
+            display:table-row;
+        }
+        &__right{
+            width:100%;
+            display:table-row;
+            vertical-align: middle;
+            padding:3rem 5rem;
+        }
+        &__img{
+            display:inline-block;
+            height: 25rem;
+        }
+        &__content &__img{
+            width: 50%;
+        }
+        &__text{
+            text-align: left;
+            font-size:1rem;
+            margin-bottom:1.3rem;
+            column-count: 1;
+            padding: 0 2rem;
+        }
+    }
+
     &__close{
         &:link,
         &:visited{
@@ -82,6 +117,10 @@
             
             //line height digunakan agar tinggi element tidak melebihi teks yg ditampilkan / X
             line-height: 1;
+            @include respond(tabport){
+                top: 1.9rem;
+                right: 1.9rem;
+            }
         }
         &:hover{
             color:$cmedgreen;
